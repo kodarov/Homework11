@@ -33,11 +33,8 @@ public class Main {
     }
     public static void task2(){
         System.out.println("Задание 2");
-        int clientOS = 0; //(0 — iOS, 1 — Android)
-        int clientDeviceYear = 2014;
-        definitionApp(clientOS,clientDeviceYear);
         int currentYear = LocalDate.now().getYear();
-        definitionApp(clientOS,currentYear);
+        definitionApp(0,currentYear);
     }
     public static int calcDistance(int deliveryDistance){
         if (deliveryDistance <= 20){
