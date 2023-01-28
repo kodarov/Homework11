@@ -40,16 +40,16 @@ public class Main {
         definitionApp(clientOS,currentYear);
     }
     public static int calcDistance(int deliveryDistance){
-        int deliveryDay = 1;
-        if (deliveryDistance <= 20) System.out.println("Потребуется дней: " + deliveryDay);
+        if (deliveryDistance <= 20){
+            return 1;
+        }
         else if (deliveryDistance <= 60) {
-            deliveryDay=deliveryDay+1;
+            return 2;
         }
         else if (deliveryDistance <= 100) {
-            deliveryDay=deliveryDay+2;
+            return 3;
         }
-        else System.out.println("Доставки нет");
-        return deliveryDay;
+        else return -1;
     }
     public static void task3(){
         System.out.println("Задание 3");
