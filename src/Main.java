@@ -7,53 +7,65 @@ public class Main {
         task3();
     }
 
-    public static void calcLeapYear(int year) {
-        if ((year % 4)>0 || (year%100) == 0) {
-            System.out.println(year +" год не високосный");
-        }
-        else System.out.println(year +" год високосный");
+    public static boolean checkLeapYear(int year) {
+        if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
+           return true;
+        } else return false;
     }
-    public static void task1(){
+    public static void task1() {
         System.out.println("Задание 1");
-        int nowYear = 2022;
-        calcLeapYear(nowYear);
+        System.out.println("Год" + (checkLeapYear(2022)?" ":" не ") + "високосный");
     }
-    public static void definitionApp(int clientOS,int clientDeviceYear){
+
+    public static void definitionApp(int clientOS, int clientDeviceYear) {
         if (clientDeviceYear < 2015) {
-            switch (clientOS){
-                case 0: System.out.println("Установите облегченное приложение с App Store"); break;
-                case 1: System.out.println("Установите облегченное приложение с Google Store"); break;
-                default: System.out.println("Телефон не поддерживается");}
+            switch (clientOS) {
+                case 0:
+                    System.out.println("Установите облегченное приложение с App Store");
+                    break;
+                case 1:
+                    System.out.println("Установите облегченное приложение с Google Store");
+                    break;
+                default:
+                    System.out.println("Телефон не поддерживается");
+            }
         } else {
-            switch (clientOS){
-                case 0: System.out.println("Установите приложение с App Store"); break;
-                case 1: System.out.println("Установите приложение с Google Store"); break;
-                default: System.out.println("Телефон не поддерживается");}
+            switch (clientOS) {
+                case 0:
+                    System.out.println("Установите приложение с App Store");
+                    break;
+                case 1:
+                    System.out.println("Установите приложение с Google Store");
+                    break;
+                default:
+                    System.out.println("Телефон не поддерживается");
+            }
         }
     }
-    public static void task2(){
+
+    public static void task2() {
         System.out.println("Задание 2");
         int currentYear = LocalDate.now().getYear();
-        definitionApp(0,currentYear);
+        definitionApp(0, currentYear);
     }
-    public static int calcDistance(int deliveryDistance){
-        if (deliveryDistance <= 20){
+
+    public static int calcDistance(int deliveryDistance) {
+        if (deliveryDistance <= 20) {
             return 1;
-        }
-        else if (deliveryDistance <= 60) {
+        } else if (deliveryDistance <= 60) {
             return 2;
-        }
-        else if (deliveryDistance <= 100) {
+        } else if (deliveryDistance <= 100) {
             return 3;
-        }
-        else return -1;
+        } else return -1;
     }
-    public static void displayDeliveryDays(int deliveryDistance){
+
+    public static void displayDeliveryDays(int deliveryDistance) {
         if (deliveryDistance == -1) {
             System.out.println("Доставки нет");
         } else System.out.println("Потребуется дней: " + deliveryDistance);
     }
-    public static void task3(){
+
+    public static void task3() {
         System.out.println("Задание 3");
         displayDeliveryDays(calcDistance(99));
 
