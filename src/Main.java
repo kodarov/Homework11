@@ -53,7 +53,7 @@ public class Main {
     }
     public static void task3(){
         System.out.println("Задание 3");
-        int deliveryDistance = 95;
+        int deliveryDistance = 950;
         calcDistance(deliveryDistance);
 
     }
