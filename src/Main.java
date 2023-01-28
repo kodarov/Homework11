@@ -51,10 +51,14 @@ public class Main {
         }
         else return -1;
     }
+    public static void displayDeliveryDays(int deliveryDistance){
+        if (deliveryDistance == -1) {
+            System.out.println("Доставки нет");
+        } else System.out.println("Потребуется дней: " + deliveryDistance);
+    }
     public static void task3(){
         System.out.println("Задание 3");
-        int deliveryDistance = 950;
-        calcDistance(deliveryDistance);
+        displayDeliveryDays(calcDistance(99));
 
     }
 }
