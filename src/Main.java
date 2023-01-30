@@ -18,7 +18,7 @@ public class Main {
     }
 
     public static void definitionApp(int clientOS, int clientDeviceYear) {
-        if (clientDeviceYear < 2015) {
+        if (clientDeviceYear < LocalDate.now().getYear()) {
             switch (clientOS) {
                 case 0:
                     System.out.println("Установите облегченное приложение с App Store");
@@ -45,8 +45,7 @@ public class Main {
 
     public static void task2() {
         System.out.println("Задание 2");
-        int currentYear = LocalDate.now().getYear();
-        definitionApp(0, currentYear);
+        definitionApp(0, 2015);
     }
 
     public static int calcDistance(int deliveryDistance) {
